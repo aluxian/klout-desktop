@@ -57,7 +57,7 @@ module.exports = {
         settings.launchOnStartup = this.checked;
 
         var launcher = new AutoLaunch({
-          name: 'Starter',
+          name: 'Klout',
           isHidden: true // hidden on launch - only works on a mac atm
         });
 
@@ -141,7 +141,7 @@ module.exports = {
       type: 'menubar'
     });
 
-    menu.createMacBuiltin('Starter');
+    menu.createMacBuiltin('Klout');
     var submenu = menu.items[0].submenu;
 
     submenu.insert(new gui.MenuItem({
@@ -181,14 +181,14 @@ module.exports = {
     }));
 
     menu.append(new gui.MenuItem({
-      label: 'Show Starter',
+      label: 'Show Klout',
       click: function() {
         win.show();
       }
     }));
 
     menu.append(new gui.MenuItem({
-      label: 'Quit Starter',
+      label: 'Quit Klout',
       click: function() {
         win.close(true);
       }
@@ -223,7 +223,7 @@ module.exports = {
       win.show();
     });
 
-    tray.tooltip = 'Starter';
+    tray.tooltip = 'Klout';
     tray.menu = this.createTrayMenu(win);
 
     // keep the object in memory

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Link to the binary
-rm -f /usr/local/bin/starter
+rm -f /usr/local/bin/klout
 
 # Launcher files
-rm -f /usr/share/applications/starter.desktop
+rm -f /usr/share/applications/klout.desktop

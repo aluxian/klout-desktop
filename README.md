@@ -1,4 +1,4 @@
-# NW.js starter
+# NW.js klout
 
 This is a sample project to get you up and running with [NW.js](http://nwjs.io/). Here's a screenshot from one of my apps that I created with this kit:
 
@@ -76,7 +76,7 @@ Use these to create the .tiff images for the OS X menu bar:
 
 ## Contributions
 
-Contributions are welcome! For feature requests and bug reports please [submit an issue](https://github.com/Aluxian/nwjs-starter/issues).
+Contributions are welcome! For feature requests and bug reports please [submit an issue](https://github.com/Aluxian/klout/issues).
 
 ## License
 

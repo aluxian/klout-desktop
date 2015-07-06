@@ -1,10 +1,10 @@
 {
-  "name": "starter",
+  "name": "klout",
   "version": "0.1.0",
-  "description": "NW.js starter project powered by Gulp.",
+  "description": "NW.js klout project powered by Gulp.",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Aluxian/nwjs-starter.git"
+    "url": "git@github.com:Aluxian/klout.git"
   },
   "scripts": {
     "postinstall": "(cd src && npm install)"

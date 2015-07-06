@@ -1,23 +1,23 @@
 !include "MUI2.nsh"
 
-Name "Starter"
+Name "Klout"
 BrandingText "aluxian.com"
 
 # set the icon
 !define MUI_ICON "icon.ico"
 
 # define the resulting installer's name:
-OutFile "..\dist\StarterSetup.exe"
+OutFile "..\dist\KloutSetup.exe"
 
 # set the installation directory
-InstallDir "$PROGRAMFILES\Starter\"
+InstallDir "$PROGRAMFILES\Klout\"
 
 # app dialogs
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_INSTFILES
 
-!define MUI_FINISHPAGE_RUN_TEXT "Start Starter"
-!define MUI_FINISHPAGE_RUN "$INSTDIR\Starter.exe"
+!define MUI_FINISHPAGE_RUN_TEXT "Start Klout"
+!define MUI_FINISHPAGE_RUN "$INSTDIR\Klout.exe"
 
 !insertmacro MUI_PAGE_FINISH
 !insertmacro MUI_LANGUAGE "English"
@@ -32,15 +32,15 @@ Section
   SetOutPath $INSTDIR
 
   # specify the files to go in the output path
-  File /r ..\build\Starter\win32\*
+  File /r ..\build\Klout\win32\*
 
   # create the uninstaller
-  WriteUninstaller "$INSTDIR\Uninstall Starter.exe"
+  WriteUninstaller "$INSTDIR\Uninstall Klout.exe"
 
   # create shortcuts in the start menu and on the desktop
-  CreateShortCut "$SMPROGRAMS\Starter.lnk" "$INSTDIR\Starter.exe"
-  CreateShortCut "$SMPROGRAMS\Uninstall Starter.lnk" "$INSTDIR\Uninstall Starter.exe"
-  CreateShortCut "$DESKTOP\Starter.lnk" "$INSTDIR\Starter.exe"
+  CreateShortCut "$SMPROGRAMS\Klout.lnk" "$INSTDIR\Klout.exe"
+  CreateShortCut "$SMPROGRAMS\Uninstall Klout.lnk" "$INSTDIR\Uninstall Klout.exe"
+  CreateShortCut "$DESKTOP\Klout.lnk" "$INSTDIR\Klout.exe"
 
 SectionEnd
 
@@ -51,8 +51,8 @@ Section "Uninstall"
   RMDir /r $INSTDIR
 
   # delete the shortcuts
-  Delete "$SMPROGRAMS\Starter.lnk"
-  Delete "$SMPROGRAMS\Uninstall Starter.lnk"
-  Delete "$DESKTOP\Starter.lnk"
+  Delete "$SMPROGRAMS\Klout.lnk"
+  Delete "$SMPROGRAMS\Uninstall Klout.lnk"
+  Delete "$DESKTOP\Klout.lnk"
 
 SectionEnd

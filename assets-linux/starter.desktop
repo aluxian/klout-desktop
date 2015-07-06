@@ -1,9 +1,9 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Starter
-Icon=starter
-Exec=/opt/starter/Starter
-Comment=Starter
+Name=Klout
+Icon=klout
+Exec=/opt/klout/Klout
+Comment=Klout
 Categories=GNOME;GTK;Development;Documentation;
 Terminal=false

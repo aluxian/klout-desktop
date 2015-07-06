@@ -25,27 +25,27 @@ gulp.task 'clean', ->
         macZip: true
         macPlist:
           NSHumanReadableCopyright: 'aluxian.com'
-          CFBundleIdentifier: 'com.aluxian.starter'
+          CFBundleIdentifier: 'com.aluxian.klout'
       .on 'end', ->
         if process.argv.indexOf('--toolbar') > 0
           shelljs.sed '-i', '"toolbar": true', '"toolbar": false', './src/package.json'
 
 # Only runs on OSX (requires XCode properly configured)
 gulp.task 'sign:osx64', ['build:osx64'], ->
-  shelljs.exec 'codesign -v -f -s "Alexandru Rosianu Apps" ./build/Starter/osx64/Starter.app/Contents/Frameworks/*'
-  shelljs.exec 'codesign -v -f -s "Alexandru Rosianu Apps" ./build/Starter/osx64/Starter.app'
-  shelljs.exec 'codesign -v --display ./build/Starter/osx64/Starter.app'
-  shelljs.exec 'codesign -v --verify ./build/Starter/osx64/Starter.app'
+  shelljs.exec 'codesign -v -f -s "Alexandru Rosianu Apps" ./build/Klout/osx64/Klout.app/Contents/Frameworks/*'
+  shelljs.exec 'codesign -v -f -s "Alexandru Rosianu Apps" ./build/Klout/osx64/Klout.app'
+  shelljs.exec 'codesign -v --display ./build/Klout/osx64/Klout.app'
+  shelljs.exec 'codesign -v --verify ./build/Klout/osx64/Klout.app'
 
 # Create a DMG for osx64; only works on OS X because of appdmg
 gulp.task 'pack:osx64', ['sign:osx64'], ->
   shelljs.mkdir '-p', './dist'            # appdmg fails if ./dist doesn't exist
-  shelljs.rm '-f', './dist/Starter.dmg'   # appdmg fails if the dmg already exists
+  shelljs.rm '-f', './dist/Klout.dmg'   # appdmg fails if the dmg already exists
 
   gulp.src []
     .pipe require('gulp-appdmg')
       source: './assets-osx/dmg.json'
-      target: './dist/Starter.dmg'
+      target: './dist/Klout.dmg'
 
 # Create a nsis installer for win32; must have `makensis` installed
 gulp.task 'pack:win32', ['build:win32'], ->
@@ -58,20 +58,20 @@ gulp.task 'pack:win32', ['build:win32'], ->
       shelljs.rm '-rf', './build/linux'
 
       move_opt = gulp.src [
-        './assets-linux/starter.desktop'
+        './assets-linux/klout.desktop'
         './assets-linux/after-install.sh'
         './assets-linux/after-remove.sh'
-        './build/Starter/linux' + arch + '/**'
+        './build/Klout/linux' + arch + '/**'
       ]
-        .pipe gulp.dest './build/linux/opt/starter'
+        .pipe gulp.dest './build/linux/opt/klout'
 
-      move_png48 = gulp.src './assets-linux/icons/48/starter.png'
+      move_png48 = gulp.src './assets-linux/icons/48/klout.png'
         .pipe gulp.dest './build/linux/usr/share/icons/hicolor/48x48/apps'
 
-      move_png256 = gulp.src './assets-linux/icons/256/starter.png'
+      move_png256 = gulp.src './assets-linux/icons/256/klout.png'
         .pipe gulp.dest './build/linux/usr/share/icons/hicolor/256x256/apps'
 
-      move_svg = gulp.src './assets-linux/icons/scalable/starter.png'
+      move_svg = gulp.src './assets-linux/icons/scalable/klout.png'
         .pipe gulp.dest './build/linux/usr/share/icons/hicolor/scalable/apps'
 
       mergeStream move_opt, move_png48, move_png256, move_svg
@@ -79,12 +79,12 @@ gulp.task 'pack:win32', ['build:win32'], ->
           shelljs.cd './build/linux'
 
           port = if arch == 32 then 'i386' else 'amd64'
-          output = "../../dist/Starter_linux#{arch}.#{target}"
+          output = "../../dist/Klout_linux#{arch}.#{target}"
 
           shelljs.mkdir '-p', '../../dist' # it fails if the dir doesn't exist
           shelljs.rm '-f', output          # it fails if the package already exists
 
-          shelljs.exec "fpm -s dir -t #{target} -a #{port} -n starter --after-install ./opt/starter/after-install.sh --after-remove ./opt/starter/after-remove.sh --license MIT --category Chat --url \"https://example.com\" --description \"A sample NW.js app.\" -m \"Alexandru Rosianu <me@aluxian.com>\" -p #{output} -v #{manifest.version} ."
+          shelljs.exec "fpm -s dir -t #{target} -a #{port} -n klout --after-install ./opt/klout/after-install.sh --after-remove ./opt/klout/after-remove.sh --license MIT --category Chat --url \"https://example.com\" --description \"A sample NW.js app.\" -m \"Alexandru Rosianu <me@aluxian.com>\" -p #{output} -v #{manifest.version} ."
           shelljs.cd '../..'
 
 # Make packages for all platforms
@@ -93,11 +93,11 @@ gulp.task 'pack:all', (callback) ->
 
 # Build osx64 and run it
 gulp.task 'run:osx64', ['build:osx64'], ->
-  shelljs.exec 'open ./build/Starter/osx64/Starter.app'
+  shelljs.exec 'open ./build/Klout/osx64/Klout.app'
 
 # Run osx64 without building
 gulp.task 'open:osx64', ->
-  shelljs.exec 'open ./build/Starter/osx64/Starter.app'
+  shelljs.exec 'open ./build/Klout/osx64/Klout.app'
 
 # Upload release to GitHub
 gulp.task 'release', ['pack:all'], (callback) ->
