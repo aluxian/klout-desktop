@@ -5,8 +5,8 @@
   "app-id": "com.aluxian.klout",
   "chromium-args": "--disable-setuid-sandbox",
   "window": {
-    "width": 800,
-    "height": 600,
+    "width": 1080,
+    "height": 768,
     "title": "Klout",
     "icon": "icons/icon.png",
     "toolbar": false,
