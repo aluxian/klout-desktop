@@ -47,8 +47,12 @@ if (platform.isWindows) {
 windowBehaviour.set(win);
 windowBehaviour.setNewWinPolicy(win);
 
-// Add a context menu
-menus.injectContextMenu(win, window, document);
+// Inject logic into the app when it's loaded
+var iframe = document.querySelector('iframe');
+iframe.onload = function() {
+  // Add a context menu
+  menus.injectContextMenu(win, iframe.contentWindow, iframe.contentDocument);
+};
 
 // Reload the app periodically until it loads
 var reloadIntervalId = setInterval(function() {
