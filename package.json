@@ -4,7 +4,7 @@
   "description": "Unofficial desktop client for Klout. Runs on OS X, Windows and Linux.",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Aluxian/klout.git"
+    "url": "git@github.com:Aluxian/klout-desktop.git"
   },
   "scripts": {
     "postinstall": "(cd src && npm install)"
