@@ -1,7 +1,7 @@
 {
   "name": "klout",
   "version": "0.1.0",
-  "description": "NW.js klout project powered by Gulp.",
+  "description": "Unofficial desktop client for Klout. Runs on OS X, Windows and Linux.",
   "repository": {
     "type": "git",
     "url": "git@github.com:Aluxian/klout.git"

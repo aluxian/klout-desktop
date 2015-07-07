@@ -84,7 +84,7 @@ gulp.task 'pack:win32', ['build:win32'], ->
           shelljs.mkdir '-p', '../../dist' # it fails if the dir doesn't exist
           shelljs.rm '-f', output          # it fails if the package already exists
 
-          shelljs.exec "fpm -s dir -t #{target} -a #{port} -n klout --after-install ./opt/klout/after-install.sh --after-remove ./opt/klout/after-remove.sh --license MIT --category Chat --url \"https://example.com\" --description \"A sample NW.js app.\" -m \"Alexandru Rosianu <me@aluxian.com>\" -p #{output} -v #{manifest.version} ."
+          shelljs.exec "fpm -s dir -t #{target} -a #{port} -n klout --after-install ./opt/klout/after-install.sh --after-remove ./opt/klout/after-remove.sh --license MIT --category Social --url \"https://github.com/Aluxian/klout-desktop\" --description \"Unofficial desktop client for Klout.\" -m \"Alexandru Rosianu <me@aluxian.com>\" -p #{output} -v #{manifest.version} ."
           shelljs.cd '../..'
 
 # Make packages for all platforms

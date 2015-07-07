@@ -1,31 +1,24 @@
-# NW.js klout
+# Klout – Unofficial desktop app
 
-This is a sample project to get you up and running with [NW.js](http://nwjs.io/). Here's a screenshot from one of my apps that I created with this kit:
+This is a desktop client for [Klout](https://klout.com/) which works on OS X, Windows and Linux. It runs on [NW.js](http://nwjs.io/) and it was created with [nwjs-starter](https://github.com/Aluxian/nwjs-starter).
 
-![Cross-platform screenshot](screenshot.png)
+If you want to create your own app, well, good news! I've written a tutorial for you: [How to create cross-platform desktop apps with NW.js](http://blog.aluxian.com/how-to-create-a-cross-platform-desktop-app-with-nw-js/).
+
+![Cross-platform screenshot](screenshot.jpg)
+
+You can download it from the [releases page](https://github.com/Aluxian/klout-desktop/releases).
 
 ## Features
 
-* native notifications
 * auto update
-* gulp tasks to
-  * build each release
-  * sign the OS X app
-  * pack
-    * Windows: nsis installer
-    * OSX: dmg
-    * Linux: deb package
-  * upload to GitHub
+* Windows installer
+* dmg package for OSX
+* deb package for Linux
 * remembers window position when closed
 * customizable settings in the right-click menu
   * run as menu bar app
   * launch on OS startup
   * open links in the browser
-
-What doesn't work:
-
-* tray icon on linux
-* rpm builds
 
 ## Pre-requisites
 
