@@ -23,10 +23,10 @@
     "semver": "^4.3.5"
   },
   "manifestUrl": "https://raw.githubusercontent.com/Aluxian/klout/master/src/package.json",
-"packages": {
-  "osx64": "https://github.com/...v0.1.0/Klout.dmg",
-  "win32": "https://github.com/...v0.1.0/KloutSetup.exe",
-  "linux32": "https://github.com/...v0.1.0/Klout_linux32.deb",
-  "linux64": "https://github.com/...v0.1.0/Klout_linux64.deb"
-}
+  "packages": {
+    "osx64": "https://github.com/...v0.1.0/Klout.dmg",
+    "win32": "https://github.com/...v0.1.0/KloutSetup.exe",
+    "linux32": "https://github.com/...v0.1.0/Klout_linux32.deb",
+    "linux64": "https://github.com/...v0.1.0/Klout_linux64.deb"
+  }
 }
